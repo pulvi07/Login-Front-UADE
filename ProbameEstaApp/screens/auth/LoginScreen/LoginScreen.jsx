@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, Pressable } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 const LoginScreen = () => {
     return (
@@ -7,9 +7,9 @@ const LoginScreen = () => {
             <Text style={{fontSize: 20, fontWeight: 'bold', mmarginBottom: 20}}>Login</Text>
             <TextInput placeholder="Email" style={styles.input}/>
             <TextInput placeholder="Password" secureTextEntry style={styles.input}/>
-            <Pressable style={{backgroundColor: 'blue', padding: 10, borderRadius: 11}}>
+            <TouchableOpacity style={{backgroundColor: 'blue', padding: 10, borderRadius: 11}}>
                 <Text style={{fontSize: 18, fontWeight: 400, color: 'white'}}>Login</Text>
-            </Pressable>
+            </TouchableOpacity>
 
             <Text style={{fontSize: 14, fontWeight: 400, marginTop: 20, textDecorationLine: 'underline'}}>Registrarse</Text>
         </View>
