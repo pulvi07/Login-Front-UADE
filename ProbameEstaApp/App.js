@@ -14,7 +14,7 @@ export default function App() {
     //   </View>
     // </View>
     <NavigationContainer>
-      {isLoggedIn ? <MainStack /> : <AuthStack setIsLoggedIn={setIsLoggedIn}/>}
+      {isLoggedIn ? <MainStack setIsLoggedIn={setIsLoggedIn} /> : <AuthStack setIsLoggedIn={setIsLoggedIn} />}
     </NavigationContainer>
   );
 }
