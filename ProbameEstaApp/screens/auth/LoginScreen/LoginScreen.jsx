@@ -75,7 +75,8 @@ export const styles = StyleSheet.create({
     width: '100%',
     borderWidth: 1,
     borderRadius: 11,
-    marginTop: -15
+    marginTop: -15,
+    color: '#A1A1A1'
   },
   passwordContainer: {
     width: '100%',
@@ -89,6 +90,7 @@ export const styles = StyleSheet.create({
   passwordInput: {
     flex: 1,
     paddingVertical: 10,
+    color: '#A1A1A1'
   },
   label: {
     fontSize: 14,
