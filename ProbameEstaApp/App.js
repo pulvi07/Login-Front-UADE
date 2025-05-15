@@ -1,15 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { LoginScreen } from './screens';
+import { useState } from 'react';
+import { MainStack, AuthStack } from './navigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
   return (
-    <View style={styles.container}>
-      <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 80}}>ProbameEstaApp</Text>
-      <View style={styles.loginContainer}>
-        <LoginScreen/>
-      </View>
-    </View>
+    // <View style={styles.container}>
+    //   <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 80}}>ProbameEstaApp</Text>
+    //   <View style={styles.loginContainer}>
+    //     <LoginScreen/>
+    //   </View>
+    // </View>
+    <NavigationContainer>
+      {isLoggedIn ? <MainStack /> : <AuthStack setIsLoggedIn={setIsLoggedIn}/>}
+    </NavigationContainer>
   );
 }
 
