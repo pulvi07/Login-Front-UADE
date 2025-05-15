@@ -16,7 +16,7 @@ const LoginScreen = () => {
 
   const handleLogin = () => {
     // BUG: comprueba cualquier contraseña q exista
-    const user = users.find(u => u.password === password);
+    const user = users.find(u => u.password.toLowerCase() === password.toLowerCase());
 
     if (user) {
       Alert.alert('Login Correcto!', `Bienvenido, ${user.email}`);
@@ -31,7 +31,8 @@ const LoginScreen = () => {
       <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 20 }}> Login </Text>
       <TextInput placeholder="Email" style={styles.input} keyboardType="email-address" autoCapitalize="none" value={email} onChangeText={setEmail}/>
       <TextInput placeholder="Password" secureTextEntry style={styles.input} value={password} onChangeText={setPassword}/>
-      <TouchableOpacity style={{ backgroundColor: 'blue', padding: 10, borderRadius: 11 }} onPress={handleLogin} >
+      <TouchableOpacity style={{ backgroundColor: /[^a-zA-Z0-9]/.test(password) ? 'gray' : 'blue', padding: 10, borderRadius: 11,}}onPress={handleLogin}>
+
         <Text style={{ fontSize: 18, fontWeight: '400', color: 'white' }}> Login</Text>
       </TouchableOpacity>
 
